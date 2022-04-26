@@ -1,6 +1,9 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { RouterLink, RouterView } from 'vue-router';
+import HelloWorld from '@/components/HelloWorld.vue';
+import { ref } from 'vue';
+
+const a = ref('11');
 </script>
 
 <template>
@@ -8,6 +11,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
+      {{ a }}
       <HelloWorld msg="You did it!" />
 
       <nav>
@@ -117,3 +121,4 @@ nav a:first-of-type {
   }
 }
 </style>
+
