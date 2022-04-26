@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld.vue';
 import { ref } from 'vue';
 
 const a = ref('11');
+const b = ref('11');
 </script>
 
 <template>
