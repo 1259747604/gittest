@@ -5,6 +5,9 @@ import { ref } from 'vue';
 
 const a = ref('11');
 const b = ref('11');
+const c = ref('11');
+const d = ref('11');
+const e = ref('11');
 </script>
 
 <template>
