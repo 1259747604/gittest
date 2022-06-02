@@ -1,18 +1,38 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
 import HelloWorld from '@/components/HelloWorld.vue';
-import { ref } from 'vue';
+import { ref, reactive, watch, onMounted } from 'vue';
 
 const a = ref('11');
+console.log('🚀 ~ file: App.vue ~ line 7 ~ a', a);
+console.log('🚀 ~ file: App.vue ~ line 7 ~ a', a.value);
 const b = ref('11');
 const c = ref('11');
-console.log(55)
+console.log(55);
 const d = ref('11');
 const e = ref('11');
 const f = ref('11');
 const g = ref('11');
 const h = ref('11');
-// const i = ref('11');
+const i = ref('11');
+
+const obj = reactive({ count: 0 });
+
+watch(
+  obj,
+  (newValue, oldValue) => {
+    console.log('🚀 ~ file: App.vue ~ line 22 ~ watch ~ newValue, oldValue', newValue, oldValue);
+  },
+  { deep: true }
+);
+
+obj.count++;
+
+const inp = ref(null);
+
+onMounted(() => {
+  inp.value.focus();
+});
 </script>
 
 <template>
@@ -21,6 +41,7 @@ const h = ref('11');
 
     <div class="wrapper">
       {{ a }}
+      <input ref="inp" type="text" />
       <HelloWorld msg="You did it!" />
 
       <nav>
